@@ -1,4 +1,4 @@
-import {Args, Command, Flags} from '@oclif/core'
+import { Args, Command } from '@oclif/core'
 
 export default class Led extends Command {
   static args = {
@@ -15,8 +15,8 @@ export default class Led extends Command {
   ]
 
   async run(): Promise<void> {
-    const {args, flags} = await this.parse(Led)
+    const { args } = await this.parse(Led)
 
-    this.log(`hello ${args.brightness} `)
+    this.log(`LED light set to ${args.brightness}% brightness and ${args.temperature}K temperature.`)
   }
 }
